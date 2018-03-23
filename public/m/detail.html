@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 1.添加移动端的视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的乐淘--商品详情</title>
+    <!-- 2.引入站点图标 -->
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 1.引包先引入第三方的包  如果有依赖要先引入依赖在引入不依赖 -->
+    <!-- 样式在head里面引入 -->
+    <!-- 1.引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <!-- 2.引人mui的样式文件 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <!-- 1.引入less预编译器 -->
+    <link rel="stylesheet/less" href="./less/detail.less">
+    <!-- 2.引入less.js -->
+    <script src="./assets/less/less.js"></script>
+</head>
+
+<body>
+    <!--先把页面的大结构划分好，每个大块最外层选择器尽量id选择器 id样式优先级高 方便覆盖一些框架的样式 可以更明显的区分代码的功能块  -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="./category.html" class="back mui-icon mui-icon-undo"></a>
+        <h4>商品详情</h4>
+    </header>
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+            <!-- 主体内容 -->
+            <div id="main">
+                <!-- 轮播图区域 -->
+                <section class="slide">
+                </section>
+                <!-- 商品详情 -->
+                <section class="products">
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- 底部区域 -->
+    <footer class="" id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-2">
+                <a href="javascript:void(0)" class="fa fa-shopping-cart">
+                </a>
+            </div>
+            <button type="button" class="mui-btn mui-btn-danger mui-col-xs-5 add-cart">加入购物车</button>
+            <button type="button" class="mui-btn mui-btn-warning mui-col-xs-5">立即购买</button>
+
+        </div>
+    </footer>
+    <script type="text/html" id="detailSlideTmp">
+
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <!-- <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="./images/banner4.png" />
+                    </a>
+                </div> -->
+                {{each pic as value i}}
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="{{value.picAddr}}" />
+                    </a>
+                </div>
+                {{/each}}
+                <!--支持循环，需要重复图片节点-->
+                <!-- <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="./images/banner1.png" />
+                    </a>
+                </div> -->
+            </div>
+            <!-- 小圆点容器 -->
+            <div class="mui-slider-indicator">
+                {{each pic as value i}}
+                <div class="mui-indicator {{i==1?'mui-active':''}}"></div>
+                {{/each}}
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="detailProductTmp">
+
+        <div class="product-name">
+            {{proName}}
+        </div>
+        <div class="product-price">
+            价格：
+            <span class="price">
+                {{price}}
+            </span>
+            <del class="oldPrice">{{oldPrice}}</del>
+        </div>
+        <div class="product-size">
+            尺码：
+            {{each size as value i}}
+            <span class="{{i==0?'active':''}}"data-size="{{value}}">{{value}}</span>
+            {{/each}}
+        </div>
+        <div class="product-num">
+            数量：
+            <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{num}}'>
+                <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                <input id="test" class="mui-input-numbox" type="number" value="1" />
+                <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+            </div>
+            剩余：
+            <span>{{num}}</span>件
+        </div>
+
+
+
+    </script>
+    <!-- js在body结束标签的上面引入 -->
+    <!-- 3.引入mui的js文件 -->
+    <script src="./assets/mui/js/mui.js"></script>
+    <!-- 4.引入zepto的js文件 -->
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <!-- 5.引入模板引擎的js文件 -->
+    <script src="./assets/artTemplate/template.js"></script>
+    <script src="./js/detail.js"></script>
+
+</body>
+
+</html>

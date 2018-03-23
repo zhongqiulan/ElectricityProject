@@ -1,0 +1,53 @@
+@import url(./base.less);
+#aside {
+    height: 100%;
+    float: left;
+    width: 180px;
+    background-color: #2f4050;
+    .img {
+        // height: 180px;
+        box-sizing: border-box;
+        padding: 30px;
+        width: 100%;
+        background-color: #243443;
+        >img {
+            width: 100%;    
+        }
+        >p{
+            color: #eee;
+            padding-top: 10px;
+            text-align: center;
+        }
+    }
+}
+#main {
+    height: 100%;
+    background-color: #eee;
+    overflow: hidden;
+    .nav {
+        padding:20px;
+        background-color: #fff;
+    }
+    .list {
+        padding:20px;
+        height: 100%;
+        margin: 20px;
+        background-color: #fff;
+        .outline {
+            height: 520px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            .table {
+                tr{
+                    height: 30px;
+                    td,th {
+                        vertical-align: middle;
+                        text-align: center; 
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,33 @@
+@import url(base.less);
+#main {
+    
+
+    .search-history {
+        .history-title {
+            padding:0 10px;      
+            >span {
+                font-size: 10px;  
+            }
+        }
+      
+    }
+    .search-list {
+        padding: 0 10px;
+        >li {
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            line-height: 25px;
+           &:nth-child(1){
+               border-top:1px solid #ccc;
+            }
+            >a {
+                padding-left: 10px;
+                color: #000;
+                font-size: 10px;
+            }
+        }
+        
+    }
+    
+}

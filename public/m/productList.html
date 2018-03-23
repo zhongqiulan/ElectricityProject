@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 1.添加移动端的视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的乐淘--商品列表</title>
+    <!-- 2.引入站点图标 -->
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 1.引包先引入第三方的包  如果有依赖要先引入依赖在引入不依赖 -->
+    <!-- 样式在head里面引入 -->
+    <!-- 1.引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <!-- 2.引人mui的样式文件 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <!-- 1.引入less预编译器 -->
+    <link rel="stylesheet/less" href="./less/productList.less">
+    <!-- 2.引入less.js -->
+    <script src="./assets/less/less.js"></script>
+</head>
+
+<body>
+    <!--先把页面的大结构划分好，每个大块最外层选择器尽量id选择器 id样式优先级高 方便覆盖一些框架的样式 可以更明显的区分代码的功能块  -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="./category.html" class="back mui-icon mui-icon-undo"></a>
+        <h4>商品列表</h4>
+
+    </header>
+    <div class="container">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <!-- 主体部分 -->
+                <div id="main">
+                    <!-- 搜索表单 -->
+                    <form class="search-form" action="#">
+                        <input type="search" class="search-input" placeholder="请输入搜索内容">
+                        <a type="button" class="mui-btn mui-btn-primary search-btn">搜索</a>
+                    </form>
+                    <div class="nav">
+                        <div class="mui-row">
+                            <a href="javascript:void(0)" class="mui-col-xs-3 active">上架时间
+                                <span class="mui-icon mui-icon-arrowdown active"></span>
+                            </a>
+                            <a href="javascript:void(0)" class="mui-col-xs-3" data-sort-type="price" data-sort = "1">价格
+                                <span class="mui-icon mui-icon-arrowdown"></span>
+                            </a>
+                            <a href="javascript:void(0)" class="mui-col-xs-3" data-sort-type="num" data-sort="1">销量
+                                <span class="mui-icon mui-icon-arrowdown"></span>
+                            </a>
+                            <a href="javascript:void(0)" class="mui-col-xs-3">折扣
+                                <span class="mui-icon mui-icon-arrowdown"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 商品列表 -->
+                    <div class=" product-list">
+                        <div class="mui-row">
+                            <!-- <div class="mui-col-xs-6">
+                                <div class="product">
+                                    <a href="javascript:void(0)">
+                                        <img src="images/product.jpg" alt="">
+                                    </a>
+                                    <p class="name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                                    <span class="newPrice">¥560.00</span>
+                                    <span class="oldPrice">¥888.00</span>
+                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                                </div>
+                            </div> -->
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- 底部区域 -->
+    <footer class="" id="footer">
+        <div class="mui-row">
+            <!-- .mui-col-sm-3*4>a[href="javascript:void(0)"]>span{首页} -->
+            <div class="mui-col-xs-3">
+                <a href="./index.html" class="tab-home fa fa-home now">
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="./category.html" class="fa fa-align-justify">
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="javascript:void(0)" class="fa fa-shopping-cart">
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="javascript:void(0)" class="fa fa-user now">
+                    <span>会员中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/html" id="productListTmp">
+        {{each data as value i}}
+        <div class="mui-col-xs-6">
+            <div class="product">
+                <a href="javascript:void(0)">
+                    <img src="{{value.pic[0].picAddr}}" alt="">
+                </a>
+                <p class="name">{{value.proName}}</p>
+                <span class="price">¥{{value.price}}</span>
+                <del class="oldPrice">¥{{value.oldPrice}}</del>
+                <button type="button" class="mui-btn mui-btn-primary btn"data-id="{{value.id}}">立即购买</button>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- js在body结束标签的上面引入 -->
+    <!-- 3.引入mui的js文件 -->
+    <script src="./assets/mui/js/mui.js"></script>
+    <!-- 4.引入zepto的js文件 -->
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <!-- 5.引入模板引擎的js文件 -->
+    <script src="./assets/artTemplate/template.js"></script>
+    <script src="./js/productList.js"></script>
+
+</body>
+
+</html>

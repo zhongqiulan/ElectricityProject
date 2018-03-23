@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 1.添加移动端的视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的乐淘--移动端</title>
+    <!-- 2.引入站点图标 -->
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 1.引包先引入第三方的包  如果有依赖要先引入依赖在引入不依赖 -->
+    <!-- 样式在head里面引入 -->
+    <!-- 1.引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <!-- 2.引人mui的样式文件 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <!-- 1.引入less预编译器 -->
+    <link rel="stylesheet/less" href="./less/cart.less">
+    <!-- 2.引入less.js -->
+    <script src="./assets/less/less.js"></script>
+</head>
+
+<body>
+    <!--先把页面的大结构划分好，每个大块最外层选择器尽量id选择器 id样式优先级高 方便覆盖一些框架的样式 可以更明显的区分代码的功能块  -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="./detail.html" class="back mui-icon mui-icon-undo"></a>
+        <h4>购物车</h4>
+        <a href="#" class="search mui-icon mui-icon-spinner-cycle mui-spin"></a>
+    </header>
+    <div id="main">
+        <li class="mui-table-view-cell">
+            <div class="mui-slider-right mui-disabled">
+                <a class="mui-btn mui-btn-yellow ">编辑</a>
+                <a class="mui-btn mui-btn-red ">删除</a>
+            </div>
+            <div class="mui-slider-handle">
+                <div class="mui-table-cell">
+                        
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="javascript:;" class="mui-navigate-right">
+                                <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+
+                                <div class="mui-media-body">
+
+                                    <p class='mui-ellipsis'>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
+                                    <ul class="table-price">
+                                        <li class="price" style="float:left;">
+                                            <span class="price">¥499.1</span>
+                                            <del class="oldPrice">¥499.1</del>
+                                        </li>
+                                        <li class="num" style="float:right;">x1双</li>
+                                    </ul>
+                                    <br>
+                                    <div class="size">鞋码：
+                                        <span>50</span>
+                                    </div>
+
+                                </div>
+                                <input type="checkbox">
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </li>
+    </div>
+
+    <!-- 底部区域 -->
+    <footer class="" id="footer">
+        <div class="mui-row">
+            <!-- .mui-col-sm-3*4>a[href="javascript:void(0)"]>span{首页} -->
+            <div class="mui-col-xs-3">
+                <a href="index.html" class="tab-home fa fa-home now">
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="./category.html" class="fa fa-align-justify">
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="javascript:void(0)" class="fa fa-shopping-cart">
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="javascript:void(0)" class="fa fa-user now">
+                    <span>会员中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 3.引入mui的js文件 -->
+    <script src="./assets/mui/js/mui.js"></script>
+    <!-- 4.引入zepto的js文件 不要同时引入zepto（移动端）和jquery（PC端）-->
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <!-- 5.引入模板引擎的js文件 -->
+    <script src="./assets/artTemplate/template.js"></script>
+    <!-- <script src="./js/cart.js"></script> -->
+
+
+</body>
+
+</html>

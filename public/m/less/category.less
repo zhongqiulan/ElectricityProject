@@ -1,0 +1,55 @@
+@import url(base.less);
+html,body {
+    height: 100%;
+}
+/*分类的主体样式*/
+#main {
+    height: 100%;
+    .category-left {
+        /*左边必须浮动*/
+        float: left;
+        width:80px;
+        margin-right: 10px;
+        >ul {
+            >li {
+                background-color: #fff;
+                border-bottom: 1px solid #ccc;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+            }
+            .active {
+                background-color: #ccc;
+            }
+        }
+
+    }
+    .category-right {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        .mui-scroll {
+            /*区域滚动：设置子元素比父元素高度高一点点才可以滚动*/ 
+            min-height: 101%;
+            padding-top: 10px;
+        }
+        .mui-row {
+            .mui-col-xs-4 {
+                border: 1px solid #ccc;
+                >a {
+                    display: block;
+                    >img {
+                        width: 100%;
+                    }
+                    >p {
+                        background-color: #fff;
+                        text-align: center;
+                        margin-bottom: 0;
+                    }
+                }
+               
+            }
+           
+        }
+    }
+}
